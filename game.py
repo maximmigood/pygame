@@ -1,7 +1,7 @@
 import pygame
 import sys
 
-from collection import defaultdict
+from collections import defaultdict
 
 class Game:
 

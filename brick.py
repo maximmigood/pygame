@@ -1,14 +1,12 @@
 import pygame
 
-pygame.init()
-screen = pygame.display.set_mode((800, 600))
-clock = pygame.time.Clock()
-background_image = pygame.image.load('.\images\kosmos.jpg')
+from game_object import Game_object
 
-while True:
-    #screen.fill((192, 192, 192))
-    screen.blit(background_image, (0, 0))
-    pygame.display.update()
-    clock.tick(60)
+class Brick(Game_object):
+    def __init__ (self, x, y, w, h, color, special_effect = None):
+        Game_object.__init__(self, x, y, w, h)
+        self.color = color
+        self.special_effect = special_effect
     
-
+    def draw(self, surface):
+        pygame.draw.rect(surface, self.color, self.bounds)
