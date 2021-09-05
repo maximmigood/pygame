@@ -4,7 +4,6 @@ import sys
 from collections import defaultdict
 
 class Game:
-
     def __init__(self,
                  caption,
                  width,
@@ -60,6 +59,5 @@ class Game:
 
             pygame.display.update()
             self.clock.tick(self.frame_rate)
-
 
         

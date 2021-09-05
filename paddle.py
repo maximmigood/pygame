@@ -13,3 +13,13 @@ class Paddle(Game_object):
 
     def draw(self, surface):
         pygame.draw.rect(surface, self.color, self.bounds)
+
+    def update(self):
+        if self.moving_left:
+            dx = -(min(self.offset, self.left))
+        elif self.moving_right:
+             dx = min(self.offset, c.screen_width - self.right)
+        else:
+            return
+        self.move(dx, 0)
+                
