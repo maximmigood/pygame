@@ -1,6 +1,6 @@
 import pygame
 
-#import config as c
+import config as c
 from game_object import Game_object
 
 class Paddle(Game_object):
@@ -22,4 +22,10 @@ class Paddle(Game_object):
         else:
             return
         self.move(dx, 0)
+
+    def handle(self, key):
+        if key == pygame.K_LEFT:
+            self.moving_left = not self.moving_left
+        else:
+            self.moving_right = not self.moving_right
                 
