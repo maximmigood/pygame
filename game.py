@@ -51,6 +51,7 @@ class Game:
 
     def run(self):
         while not self.game_over:
+            self.handle_events()
             self.surface.blit(self.background_image, (0, 0))
 
             self.handle_events()
@@ -61,3 +62,8 @@ class Game:
             self.clock.tick(self.frame_rate)
 
         
+
+
+g = Game('Brick', 800, 600, '.\images\kosmos.jpg', 60)
+g.objects.append(Paddle(130, 130, 50, 10, (100, 200, 255), 2))
+g.run()
